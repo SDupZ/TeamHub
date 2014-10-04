@@ -1,0 +1,5 @@
+insert into player (player_code, first_name, last_name, club, rank) values ('AKBBSMD', 'Simon', 'du Preez', 'Browns Bay', 1)
+insert into player (player_code, first_name, last_name, club, rank) values ('AKBBabc', 'Test1', 'namelast1', 'Mairangi', 1)
+insert into player (player_code, first_name, last_name, club, rank) values ('AKBBabd', 'Test2', 'amelast3', 'Belmont', 1)
+insert into player (player_code, first_name, last_name, club, rank) values ('AKBBwer', 'Test3', 'amelast4', 'Rochardvile', 1)
+insert into player (player_code, first_name, last_name, club, rank) values ('AKBBqwg', 'Test4', 'amelast3', 'Browns Bay', 1)
