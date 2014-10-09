@@ -1,5 +1,5 @@
 package com.bottomdog.teamhub.restful.controller;
-/*
+
 import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
@@ -11,66 +11,67 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.WebRequest;
 
+import com.bottomdog.teamhub.domain.Player;
 import com.bottomdog.teamhub.persistence.PlayerDao;
 
-@RequestMapping(value="/accounts")
-public class AccountController {
+@RequestMapping(value="/players")
+public class PlayerController {
 
-	final Logger logger = LoggerFactory.getLogger(AccountController.class);
+	final Logger logger = LoggerFactory.getLogger(PlayerController.class);
 	
-	private PlayerDao accountDao;
+	private PlayerDao playerDao;
 
-	public AccountController(PlayerDao accountDao) {
-		this.accountDao = accountDao;
+	public PlayerController(PlayerDao playerDao) {
+		this.playerDao = playerDao;
 	}
 	
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
 	public Players listData(WebRequest webRequest) {
-		return new Players(accountDao.findAllWithDetail());
+		return new Players(playerDao.findAllWithDetail());
 	}	
 
 	@RequestMapping(value="/{gamerName}", method=RequestMethod.GET)
 	@ResponseBody
-	public Account findAccountById(@PathVariable String gamerName) {		
-		return accountDao.findByGamerName(gamerName);
+	public Player findPlayerById(@PathVariable String gamerName) {		
+		return playerDao.findByGamerName(gamerName);
 	}
 	
 	@RequestMapping(value="/{gamerName}/players", method=RequestMethod.GET)
 	@ResponseBody
 	public Players findPlayersByGamerName(@PathVariable String gamerName) {	
 
-		return new Players(accountDao.findPlayersByAccount(gamerName));
+		return new Players(playerDao.findPlayersByPlayer(gamerName));
 	}
 	
 	@RequestMapping(value="/", method=RequestMethod.POST)
 	@ResponseBody
-	public Account create(@RequestBody Account account, HttpServletResponse response) {
+	public Player create(@RequestBody Player player, HttpServletResponse response) {
 		System.out.println("test");
-		logger.info("Creating account: " + account);
-		accountDao.insert(account);
+		logger.info("Creating player: " + player);
+		playerDao.insert(player);
 		System.out.println("test2");
-		logger.info("Account created successfully with info: " + account);
-		response.setHeader("Location",  "/accounts/" + account.getGamerName());
-		return account;
+		logger.info("Player created successfully with info: " + player);
+		response.setHeader("Location",  "/players/" + player.getGamerName());
+		return player;
 	}
 	
 	@RequestMapping(value="/{gamerName}", method=RequestMethod.PUT)
 	@ResponseBody
-	public void update(@RequestBody Account account, @PathVariable String gamerName) {
-		logger.info("Updating account: " + account);
-		accountDao.update(account);
-		logger.info("Account updated successfully with info: " + account);
-		//return account;
+	public void update(@RequestBody Player player, @PathVariable String gamerName) {
+		logger.info("Updating player: " + player);
+		playerDao.update(player);
+		logger.info("Player updated successfully with info: " + player);
+		//return player;
 	}	
 
 	@RequestMapping(value="/{gamerName}", method=RequestMethod.DELETE)
 	@ResponseBody
 	public void delete(@PathVariable String gamerName) {
-		logger.info("Deleting account with game name: " + gamerName);
-		Account account = accountDao.findByGamerName(gamerName);
-		accountDao.delete(account);
-		logger.info("Account deleted successfully");
+		logger.info("Deleting player with game name: " + gamerName);
+		Player player = playerDao.findByGamerName(gamerName);
+		playerDao.delete(player);
+		logger.info("Player deleted successfully");
 	}	
 	
 }*/
