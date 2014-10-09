@@ -1,6 +1,5 @@
-package com.simondupreez.spring.bottomdog.restful.controller;
-/*package com.simondupreez.spring.honapp.restful.controller;
-
+package com.bottomdog.teamhub.restful.controller;
+/*
 import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
@@ -12,8 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.WebRequest;
 
-import com.simondupreez.spring.honapp.domain.Players;
-import com.simondupreez.spring.honapp.persistence.PlayerDao;
+import com.bottomdog.teamhub.persistence.PlayerDao;
 
 @RequestMapping(value="/accounts")
 public class AccountController {
@@ -28,8 +26,8 @@ public class AccountController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
-	public Accounts listData(WebRequest webRequest) {
-		return new Accounts(accountDao.findAllWithDetail());
+	public Players listData(WebRequest webRequest) {
+		return new Players(accountDao.findAllWithDetail());
 	}	
 
 	@RequestMapping(value="/{gamerName}", method=RequestMethod.GET)
@@ -75,5 +73,4 @@ public class AccountController {
 		logger.info("Account deleted successfully");
 	}	
 	
-}
-*/
+}*/

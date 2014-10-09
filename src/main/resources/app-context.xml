@@ -27,11 +27,11 @@
     <tx:annotation-driven/>
     <aop:aspectj-autoproxy/>
     
-    <context:component-scan base-package="com.simondupreez.spring.bottomdog" />
+    <context:component-scan base-package="com.bottomdog.teamhub" />
     
     <bean id="springSessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="com.simondupreez.spring.bottomdog.domain"/>
+        <property name="packagesToScan" value="com.bottomdog.teamhub.domain"/>
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>

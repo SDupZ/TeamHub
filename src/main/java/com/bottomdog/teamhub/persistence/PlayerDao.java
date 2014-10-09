@@ -1,10 +1,10 @@
-package com.simondupreez.spring.bottomdog.persistence;
+package com.bottomdog.teamhub.persistence;
 
 import java.util.List;
 
 import org.hibernate.SessionFactory;
 
-import com.simondupreez.spring.bottomdog.domain.Player;
+import com.bottomdog.teamhub.domain.Player;
 
 public interface PlayerDao {
 

@@ -1,11 +1,11 @@
-package com.simondupreez.spring.bottomdog;
+package com.bottomdog.teamhub;
 
 import java.util.List;
 
 import org.springframework.context.support.GenericXmlApplicationContext;
 
-import com.simondupreez.spring.bottomdog.domain.Player;
-import com.simondupreez.spring.bottomdog.persistence.PlayerDao;
+import com.bottomdog.teamhub.domain.Player;
+import com.bottomdog.teamhub.persistence.PlayerDao;
 
 public class Main {
 	public static void main(String[] args){

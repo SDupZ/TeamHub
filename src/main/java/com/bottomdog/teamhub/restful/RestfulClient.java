@@ -1,11 +1,11 @@
 
-package com.simondupreez.spring.bottomdog.restful;
+package com.bottomdog.teamhub.restful;
 
 import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.web.client.RestTemplate;
 
-import com.simondupreez.spring.bottomdog.domain.Player;
-import com.simondupreez.spring.bottomdog.domain.Players;
+import com.bottomdog.teamhub.domain.Player;
+import com.bottomdog.teamhub.domain.Players;
 
 public class RestfulClient {
 

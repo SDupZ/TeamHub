@@ -1,5 +1,5 @@
 
-package com.simondupreez.spring.bottomdog.domain;
+package com.bottomdog.teamhub.domain;
 
 import java.io.Serializable;
 import java.util.List;

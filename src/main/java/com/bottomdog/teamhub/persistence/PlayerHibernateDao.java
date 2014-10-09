@@ -1,4 +1,4 @@
-package com.simondupreez.spring.bottomdog.persistence;
+package com.bottomdog.teamhub.persistence;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.simondupreez.spring.bottomdog.domain.Player;
+import com.bottomdog.teamhub.domain.Player;
 
 @Repository("playerDao")
 @Transactional
