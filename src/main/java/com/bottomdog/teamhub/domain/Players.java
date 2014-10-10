@@ -17,11 +17,11 @@ public class Players implements Serializable {
 		this.players = players;
 	}
 	
-	public List<Player> getAccounts() {
+	public List<Player> getPlayers() {
 		return players;
 	}
 
-	public void setAccounts(List<Player> players) {
+	public void setPlayers(List<Player> players) {
 		this.players = players;
 	}
 	 

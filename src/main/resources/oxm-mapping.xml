@@ -1,2 +1,26 @@
 <mapping>
+	<class name="com.bottomdog.teamhub.domain.Players">
+        <field name="players" type="com.bottomdog.teamhub.domain.Player" collection="arraylist">
+            <bind-xml name="player"/>
+        </field>
+    </class>
+
+    <class name="com.bottomdog.teamhub.domain.Player" identity="playerCode">
+        <map-to xml="player" />        
+        <field name="playerCode" type="string">
+            <bind-xml name="playerCode" node="element"/>
+        </field>             
+        <field name="firstName" type="string">
+            <bind-xml name="firstName" node="element" />
+        </field>
+        <field name="lastName" type="string">
+            <bind-xml name="lastName" node="element" />
+        </field>    
+        <field name="club" type="string">
+            <bind-xml name="club" node="element" />
+        </field>
+        <field name="rank" type="integer">
+            <bind-xml name="rank" node="element" />
+        </field>          
+    </class>     
 </mapping>

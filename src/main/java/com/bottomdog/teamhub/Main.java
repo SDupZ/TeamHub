@@ -15,8 +15,8 @@ public class Main {
 		
 		PlayerDao playerDao = ctx.getBean("playerDao", PlayerDao.class);		
 		
-		System.out.println("ALL ACCOUNTS: ");
-		// Find and list all accounts
+		System.out.println("ALL PLAYERS: ");
+		// Find and list all players
 		List<Player> players = playerDao.findAll();
 		for (Player player: players) {
 			System.out.println(player);

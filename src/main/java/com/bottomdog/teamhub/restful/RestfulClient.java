@@ -1,4 +1,4 @@
-
+/*
 package com.bottomdog.teamhub.restful;
 
 import org.springframework.context.support.GenericXmlApplicationContext;
@@ -23,7 +23,7 @@ public class RestfulClient {
 		ctx.load("classpath:restful-client-app-context.xml");
 		ctx.refresh();
 		
-		/*Accounts accounts;
+		Accounts accounts;
 		Account account;
 		Players players;
 		
@@ -76,11 +76,11 @@ public class RestfulClient {
 		System.out.println("Testing retrieve all accounts:");
 		accounts = restTemplate.getForObject(URL_GET_ALL_ACCOUNTS, Accounts.class);
 		listAccounts(accounts); 
-		System.out.println("");	*/
+		System.out.println("");	
 		
 		ctx.close();
 	}
-/*	private static void listAccounts(Accounts accounts) {
+	private static void listAccounts(Accounts accounts) {
 		for (Account account: accounts.getAccounts()) {
 			System.out.println(account);
 		}	
@@ -92,6 +92,6 @@ public class RestfulClient {
 			System.out.println(player);
 		}	
 		System.out.println("");
-	}*/
+	}
 
-}
+}*/

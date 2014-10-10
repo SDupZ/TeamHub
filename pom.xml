@@ -3,11 +3,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.simondupreez.spring.honapp</groupId>
-	<artifactId>spring-managementservice-teamhub</artifactId>
+	<groupId>com.bottomdog.teamhub</groupId>
+	<artifactId>management-teamhub</artifactId>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>HoN Data Utility</name>
+	<name>TeamHub Management</name>
 	<url>http://www.springframework.org</url>
 	<properties>
 		<java-version>1.6</java-version>

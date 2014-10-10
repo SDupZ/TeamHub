@@ -22,8 +22,7 @@
     </mvc:annotation-driven>
 	
 	<tx:annotation-driven/>
-    <!-- <context:component-scan base-package="com.simondupreez.spring.honapp.restful.controller" /> -->
-    <context:component-scan base-package="com.simondupreez.spring.honapp, com.simondupreez.spring.honapp.restful.controller" />
+	<context:component-scan base-package="com.bottomdog.teamhub, com.bottomdog.teamhub.restful.controller" />
     
     <bean id="castorMarshaller" class="org.springframework.oxm.castor.CastorMarshaller">
         <property name="mappingLocation" value="classpath:oxm-mapping.xml"/>
@@ -42,7 +41,7 @@
     
 	<bean id="springSessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="com.simondupreez.spring.honapp.domain"/>
+        <property name="packagesToScan" value="com.bottomdog.teamhub.domain"/>
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
@@ -54,12 +53,12 @@
         </property>
     </bean>
     
-    <bean id="accountDao" class=" com.simondupreez.spring.honapp.persistence.AccountHibernateDao">
+    <bean id="playerDao" class=" com.bottomdog.teamhub.persistence.PlayerHibernateDao">
     	<property name="sessionFactory" ref="springSessionFactory"/>
     </bean>
    
-    <bean id="controller" class="com.simondupreez.spring.honapp.restful.controller.AccountController">
-    	<constructor-arg ref="accountDao" />
+    <bean id="controller" class="com.bottomdog.teamhub.restful.controller.PlayerController">
+    	<constructor-arg ref="playerDao" />
     </bean>
 
 </beans>

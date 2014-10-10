@@ -1,4 +1,4 @@
-/*package com.bottomdog.teamhub.restful.controller;
+package com.bottomdog.teamhub.restful.controller;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.WebRequest;
 
 import com.bottomdog.teamhub.domain.Player;
+import com.bottomdog.teamhub.domain.Players;
 import com.bottomdog.teamhub.persistence.PlayerDao;
 
 @RequestMapping(value="/players")
@@ -28,50 +29,41 @@ public class PlayerController {
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
 	public Players listData(WebRequest webRequest) {
-		return new Players(playerDao.findAllWithDetail());
+		logger.info("List data request begin: " );
+		return new Players(playerDao.findAll());
 	}	
 
-	@RequestMapping(value="/{gamerName}", method=RequestMethod.GET)
+	@RequestMapping(value="/{playerCode}", method=RequestMethod.GET)
 	@ResponseBody
-	public Player findPlayerById(@PathVariable String gamerName) {		
-		return playerDao.findByGamerName(gamerName);
-	}
-	
-	@RequestMapping(value="/{gamerName}/players", method=RequestMethod.GET)
-	@ResponseBody
-	public Players findPlayersByGamerName(@PathVariable String gamerName) {	
-
-		return new Players(playerDao.findPlayersByPlayer(gamerName));
+	public Player findPlayerByCode(@PathVariable String playerCode) {	
+		logger.info("Retrieving player by code: " + playerCode );
+		return playerDao.findByPlayerCode(playerCode);
 	}
 	
 	@RequestMapping(value="/", method=RequestMethod.POST)
 	@ResponseBody
 	public Player create(@RequestBody Player player, HttpServletResponse response) {
-		System.out.println("test");
 		logger.info("Creating player: " + player);
 		playerDao.insert(player);
-		System.out.println("test2");
 		logger.info("Player created successfully with info: " + player);
-		response.setHeader("Location",  "/players/" + player.getGamerName());
+		response.setHeader("Location",  "/players/" + player.getPlayerCode());
 		return player;
 	}
 	
-	@RequestMapping(value="/{gamerName}", method=RequestMethod.PUT)
+	@RequestMapping(value="/{playerCode}", method=RequestMethod.PUT)
 	@ResponseBody
-	public void update(@RequestBody Player player, @PathVariable String gamerName) {
+	public void update(@RequestBody Player player, @PathVariable String playerCode) {
 		logger.info("Updating player: " + player);
 		playerDao.update(player);
 		logger.info("Player updated successfully with info: " + player);
-		//return player;
 	}	
 
-	@RequestMapping(value="/{gamerName}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/{playerCode}", method=RequestMethod.DELETE)
 	@ResponseBody
-	public void delete(@PathVariable String gamerName) {
-		logger.info("Deleting player with game name: " + gamerName);
-		Player player = playerDao.findByGamerName(gamerName);
+	public void delete(@PathVariable String playerCode) {
+		logger.info("Deleting player with player code: " + playerCode);
+		Player player = playerDao.findByPlayerCode(playerCode);
 		playerDao.delete(player);
 		logger.info("Player deleted successfully");
-	}	
-	
-}*/
+	}		
+}
