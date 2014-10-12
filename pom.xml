@@ -103,7 +103,12 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.1.2</version>
-        </dependency>                          	
+        </dependency>
+        <dependency>
+        	<groupId>com.bottomdog.teamhub.apacheballsmathdeep</groupId>
+        	<artifactId>mathstuff</artifactId>
+        	 <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 	</dependencies>
     <build>
         <plugins>
